@@ -6,7 +6,7 @@
 /*   By: guilheda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 14:59:47 by guilheda          #+#    #+#             */
-/*   Updated: 2025/12/15 15:47:14 by guilheda         ###   ########.fr       */
+/*   Updated: 2025/12/15 21:49:48 by guilheda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 # define STR 0
 
 int	ft_putstr(const char *str, char c, int is_char);
+int	ft_putnbr(int nb);
 
 #endif
