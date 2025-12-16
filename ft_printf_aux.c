@@ -6,7 +6,7 @@
 /*   By: guilheda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:25:13 by guilheda          #+#    #+#             */
-/*   Updated: 2025/12/15 21:45:18 by guilheda         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:30:49 by guilheda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,16 @@ int	ft_putnbr(int nb)
 	}
 	else
 		ft_putchar(nb + '0');
+	return (count);
+}
+
+int	ft_putnbrbase(unsigned long nb, char *str, int base)
+{
+	int count;
+
+	count = 0;
+	if (nb >= (unsigned long)base)
+		count += ft_putnbrbase(nb / base, str, base);
+	count += write(1, &str[nb % base], 1);
 	return (count);
 }
