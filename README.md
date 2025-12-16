@@ -47,68 +47,12 @@ Recompile everything:
 
 - <b>make re</b>
 
+<hr>
+
 ### Compile with your program:
 
 cc main.c libftprintf.a -o program
 
 ./program
 
-## Algorithm and Data Structure
 
-1. <b>Variadic Functions (va_list)</b>
-
-The project uses C's <stdarg.h> library to handle variable numbers of arguments
-va_start(), va_arg(), and va_end() macros traverse the argument list.
-
-Type promotion rules are respected (e.g., char is promoted to int, so we use va_arg(args, int) for %c).
-
-2. <b>Recursive Number Conversion</b>
-
-Number printing functions use recursion to handle digits.
-
-For ft_putnbr(): recursively divides by 10 until a single digit remains.
-
-For ft_putnbr_base(): recursively divides by the base (16 for hex, 8 for octal, etc.).
-
-3. <b>Modular Function Architecture</b>
-
-Each conversion type has dedicated helper functions:
-
-<b>ft_putstr()</b> - handles strings and characters
-
-<b>ft_putnbr()</b> - handles signed integers
-
-<b>ft_putlunbr_base()</b> - handles unsigned integers in any base (hex, decimal)
-
-<b>ft_format()</b> - dispatcher that routes to the appropriate handler based on the specifier.
-
-
-4. <b>Character Counting Strategy</b>
-
-Every write operation returns the number of bytes written.
-
-The main loop accumulates these counts.
-
-
-### Special Cases Handled
-
-INT_MIN (-2147483648): Cannot be negated directly due to two's complement limits, so it's hardcoded.
-
-NULL strings: Prints "(null)" to match standard printf() behavior.
-
-Pointer formatting: Casts addresses to unsigned long and prints in hexadecimal with "0x" prefix.
-
-## Resources Documentation
-
-<b>printf man page</b> - Standard printf reference
-
-<b>stdarg.h documentation</b> - Variadic function handling
-
-## AI Usage
-AI assistance was used for the following tasks:
-
-<b>Debugging support</b>: Identifying logic errors in variadic argument handling and type casting issues.
-
-<b>Documentation:</b> Structuring this README and explaining technical concepts clearly.
-
-No AI-generated code was used directly without understanding and manual verification. All core logic and implementation decisions were made independently with AI serving as a learning tool.
