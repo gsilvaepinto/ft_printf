@@ -6,7 +6,7 @@
 /*   By: guilheda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:25:13 by guilheda          #+#    #+#             */
-/*   Updated: 2025/12/16 11:30:49 by guilheda         ###   ########.fr       */
+/*   Updated: 2025/12/16 13:30:22 by guilheda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	ft_putstr(const char *str, char c, int is_char)
 	return (write(1, str, i));
 }
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	return (write(1, &c, 1));
 }
 
 int	ft_putnbr(int nb)
@@ -49,17 +49,17 @@ int	ft_putnbr(int nb)
 	}
 	if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		count += ft_putnbr(nb / 10);
+		count += ft_putnbr(nb % 10);
 	}
 	else
-		ft_putchar(nb + '0');
+		count += ft_putchar(nb + '0');
 	return (count);
 }
 
 int	ft_putnbrbase(unsigned long nb, char *str, int base)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (nb >= (unsigned long)base)

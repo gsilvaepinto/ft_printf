@@ -6,7 +6,7 @@
 /*   By: guilheda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 14:59:47 by guilheda          #+#    #+#             */
-/*   Updated: 2025/12/16 11:39:40 by guilheda         ###   ########.fr       */
+/*   Updated: 2025/12/16 13:29:50 by guilheda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@
 int	ft_putstr(const char *str, char c, int is_char);
 int	ft_putnbr(int nb);
 int	ft_putnbrbase(unsigned long nb, char *str, int base);
+int	ft_printf(const char *str, ...);
+int	ft_putchar(char c);
 
 #endif

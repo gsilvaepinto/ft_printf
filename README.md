@@ -1,3 +1,5 @@
+# FT_PRINTF
+
 <i>This project has been created as part of the 
 42 curriculum by guilheda.</i>
 
@@ -27,7 +29,7 @@ The main goal is to build a custom formatted output function that can handle var
 
 To compile the library, run:
 
-<b>make</b>
+- <b>make</b>
 
 This will generate the libftprintf.a static library.
 
@@ -47,7 +49,8 @@ Recompile everything:
 
 ### Compile with your program:
 
-gcc main.c libftprintf.a -o program
+cc main.c libftprintf.a -o program
+
 ./program
 
 ## Algorithm and Data Structure
